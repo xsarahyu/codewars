@@ -6,11 +6,11 @@ Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs s
 Create a function which translates a given DNA string into RNA.
 
 For example:
-
 "GCAT"  =>  "GCAU"
 The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
 */
 
+//Solution 1
 function DNAtoRNA(dna) {
     let rna = ""
     for (i=0; i<dna.length; i++) {
@@ -24,10 +24,8 @@ function DNAtoRNA(dna) {
     return rna
 }
 
-//or
-
+//Solution 2
 let DNAtoRNA = dna => dna.split("T").join("U")
 
-//or
-
+//Solution 3
 let DNAtoRNA = dna => dna.replaceAll("T", "U")
