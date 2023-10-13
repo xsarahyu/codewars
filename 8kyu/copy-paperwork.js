@@ -8,6 +8,7 @@ n= 5, m=5: 25
 n=-5, m=5:  0
 */
 
+//Solution 1
 function paperwork(n, m) {
     if (n<0 || m<0) {
         return 0
@@ -17,10 +18,8 @@ function paperwork(n, m) {
     }
 }
 
-//or
-
+//Solution 2
 let paperwork = (n, m) => n<0 || m<0 ? 0 : n*m
 
-//or
-
+//Solution 3
 let paperwork = (n, m) => Math.max(0, n) * Math.max(0, m)

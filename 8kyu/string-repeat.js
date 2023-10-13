@@ -6,6 +6,7 @@ Examples (input -> output)
 5, "Hello" -> "HelloHelloHelloHelloHello"
 */
 
+//Solution 1
 function repeatStr (num, str) {
     let repeatStr = ""
     for (i=1; i<=num; i++) {
@@ -14,8 +15,7 @@ function repeatStr (num, str) {
     return repeatStr
 }
 
-//or
-  
+//Solution 2
 function repeatStr (num, str) {
     let repeatStr = ""
     let i=1
@@ -26,12 +26,10 @@ function repeatStr (num, str) {
     return repeatStr
 }
 
-//or
-
+//Solution 3
 function repeatStr (num, str) {
     return str.repeat(num)
 }
 
-//or
-
+//Solution 4
 repeatStr = (num, str) => str.repeat(num)
