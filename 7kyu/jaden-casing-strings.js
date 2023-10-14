@@ -9,19 +9,36 @@ Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
 Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
 */
 
-
+//Solution 1
 String.prototype.toJadenCase = function () {
     return this.split(' ').map(w => w.slice(0,1).toUpperCase() + w.slice(1)).join(' ');
-  };
+};
 
+//Solution 2
 String.prototype.toJadenCase = function() {
-    let splitQuote = this.split(' ')
     let newQuote = []
-    splitQuote.map(word => {
-        let first = word.slice(0,1).toUpperCase()
-        let rest = word.slice(1)
-        newWord = first + rest
-        newQuote.push(newWord)
+    let splitQuote = this.split(' ') //array of words
+    splitQuote.map((word) => {
+        let firstChar = word[0].toUpperCase() //uppercase first character
+        let restOfWord = word.slice(1)
+        let newWord = firstChar + restOfWord
+        newQuote.push(newWord) //new array of words
     })
-    return newQuote.join(' ')
+    return newQuote.join(' ') //concatenate elements in array to string
+}
+
+//Solution 3
+String.prototype.toJadenCase = function() {
+    return this
+        .split(' ')
+        .map(word => word.replace(word[0], word[0].toUpperCase()))
+        .join(' ')
+}
+
+//Solution 4
+String.prototype.toJadenCase = function() {
+    return this
+        .split(' ')
+        .map(word => word[0].toUpperCase() + word.slice(1))
+        .join(' ')
 }
