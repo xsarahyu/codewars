@@ -17,6 +17,27 @@ Third quadrant, the quadrant in the bottom-left, contains all points with negati
 Fourth quadrant, the quadrant in the bottom-right, contains all points with positive X, but negative Y
 */
 
+//Solution 1
 function quadrant(x, y) {
-    return x > 0 ? y > 0 ? 1 : 4 : y > 0 ? 2 : 3;
+    return x > 0 ? (y > 0 ? 1 : 4) : (y > 0 ? 2 : 3)
+}
+
+//Solution 2
+function quadrant(x, y) {
+    if (x > 0) {
+        if (y > 0) {
+            return 1
+        }
+        else {
+            return 4
+        }
+    }
+    else if (x < 0) {
+        if (y > 0) {
+            return 2
+        }
+        else {
+            return 3
+        }
+    }
 }
