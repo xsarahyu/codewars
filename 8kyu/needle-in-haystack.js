@@ -7,7 +7,6 @@ After your function finds the needle it should return a message (as a string) th
 "found the needle at position " plus the index it found the needle, so:
 
 Example (Input --> Output)
-
 ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5"
 */
 
@@ -27,8 +26,14 @@ function findNeedle(haystack) {
     }
 }
 
-// Solution 3 - string concatenation
+// Solution 3 - string concatenation vs. template literal
 const findNeedle = haystack => 'found the needle at position ' + haystack.indexOf('needle')
-
-// Solution 4 - template literal
 const findNeedle = haystack => `found the needle at position ${haystack.indexOf('needle')}`
+
+// Solution 4 - forEach method
+function findNeedle(haystack) {
+    haystack.forEach((e, i) => {
+        if (e === 'needle') position = i
+    })
+    return 'found the needle at position ' + position
+}
